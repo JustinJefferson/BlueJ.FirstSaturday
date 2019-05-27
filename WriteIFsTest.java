@@ -65,6 +65,14 @@ public class WriteIFsTest
         assertEquals("cooling", writeIFs1.thermoSTAT(81));
     }
     @Test
+    public void TestTherm2()
+    {
+        WriteIFs writeIFs1 = new WriteIFs();
+        assertEquals("cooling", writeIFs1.thermoSTAT(150));
+    }
+    
+    
+    @Test
     public void TestCheckFuel1()
     {
         WriteIFs writeIFs1 = new WriteIFs();
@@ -96,6 +104,9 @@ public class WriteIFsTest
         writeIFs1.tt_s = 1;
         writeIFs1.fireplaceControl(oo);
         assertEquals(213, writeIFs1.tt_s);
+        
+        //the answer to this test is incorrect with the current directions
+        //Cannot complete test without changing the directions
     }
     @Test
     public void TestFireControl3()
@@ -106,6 +117,34 @@ public class WriteIFsTest
         writeIFs1.tt_s = 1;
         writeIFs1.fireplaceControl(oo);
         assertEquals(213, writeIFs1.tt_s);
+        
+        //the answer to this test is incorrect with the current directions
+        //Cannot complete test without changing the directions
+    }
+    
+    @Test
+    public void TestFireControl4()
+    {
+        WriteIFs writeIFs1 = new WriteIFs();
+        Object oo = new Object();
+        writeIFs1.oo1 = 65;
+        writeIFs1.oo2 = 75;
+        writeIFs1.tt_s = 1;
+        writeIFs1.fireplaceControl(oo);
+        assertEquals(1, writeIFs1.tt_s);
+        
+    }
+    @Test
+    public void TestFireControl5()
+    {
+        WriteIFs writeIFs1 = new WriteIFs();
+        Object oo = new Object();
+        writeIFs1.oo1 = 70;
+        writeIFs1.oo2 = 80; 
+        writeIFs1.tt_s = 1;
+        writeIFs1.fireplaceControl(oo);
+        assertEquals(1, writeIFs1.tt_s);
+        
     }
 
 }
